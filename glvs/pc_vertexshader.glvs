@@ -1,0 +1,19 @@
+#version 130
+
+uniform mat4 ModelViewMatrix;
+uniform mat4 ProjectionMatrix;
+
+//vertex position input
+in vec2 in_vertexPosition; 
+
+//rgba color input
+in vec4 in_multiColor;
+
+//rgba color output
+out vec4 glvs_out_multiColor;
+
+void main()
+{
+	glvs_out_multiColor = in_multiColor;
+	gl_Position = (ProjectionMatrix * ModelViewMatrix) * vec4(in_vertexPosition.x, in_vertexPosition.y, 0.0, 1.0);
+}

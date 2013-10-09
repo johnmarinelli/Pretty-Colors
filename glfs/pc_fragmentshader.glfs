@@ -1,0 +1,9 @@
+#version 130
+
+in vec4 glvs_out_multiColor;
+out vec4 fragment;
+
+void main()
+{
+	fragment = glvs_out_multiColor;
+}
